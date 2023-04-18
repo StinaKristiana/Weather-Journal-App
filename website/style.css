@@ -17,8 +17,6 @@ body {
     font-size: 20px;
 }
 
-
-
 .entry {
     position: relative;
     transform: translate(-50%, -50%);
@@ -121,7 +119,7 @@ button {
 }
 
 #content::before {
-    content: "I'm feeling:   ";
+    content: "I'm feeling: ";
 }
 
 input:focus,
