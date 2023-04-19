@@ -11,5 +11,3 @@ npm install
 ```bash
 npm start server
 ```
-# Notes
-Feel free to check out live action: 
