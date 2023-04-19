@@ -1,5 +1,4 @@
 let projectData = {}
-
 const express = require('express')
 const bodyParser = require('body-parser')
 const app = express()
@@ -23,7 +22,7 @@ function returnProjectData (req, res) {
   res.send(projectData)
 }
 
-app.post('/add', addIncomingData)
+app.post('/addDatatoServer', addIncomingData)
 
 function addIncomingData (req, res) {
   projectData['temp'] = req.body.temp

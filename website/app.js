@@ -1,10 +1,10 @@
 const apiKey = '811eee9c924702ee34682cfc72905715&units=imperial'
 const baseUrl = 'https://api.openweathermap.org/data/2.5/weather?'
+const generateBtn = document.getElementById('generate')
 
 let d = new Date()
 let newDate = d.getMonth() + '.' + d.getDate() + '.' + d.getFullYear()
 
-const generateBtn = document.getElementById('generate')
 generateBtn.addEventListener('click', integrationAPI)
 
 const getWeatherData = async (baseUrl, apiKey) => {
@@ -21,10 +21,9 @@ const getWeatherData = async (baseUrl, apiKey) => {
 function integrationAPI (e) {
   const content = document.getElementById('feelings').value
   e.preventDefault()
-
   getWeatherData(baseUrl, apiKey)
     .then(data => {
-      postData('/add', {
+      postData('/addDatatoServer', {
         temp: data.main.temp,
         date: newDate,
         content: content
@@ -36,6 +35,7 @@ function integrationAPI (e) {
     .catch(error => {
       alert('Please try again, or check if zipcode is valid', error)
     })
+  document.getElementById('userInfo').reset()
 }
 
 const postData = async (url = '', data = {}) => {
@@ -51,7 +51,6 @@ const postData = async (url = '', data = {}) => {
       content: data.content
     })
   })
-
   try {
     const postedData = await response.json()
     return postedData

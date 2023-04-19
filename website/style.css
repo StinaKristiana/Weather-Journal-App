@@ -4,7 +4,6 @@ body {
     padding: 0;
     font-family: sans-serif;
     height: 100vh;
-
 }
 
 #app {
@@ -30,7 +29,6 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.3);
     margin-bottom: 50px;
 }
-
 
 form {
     width: 400px;
@@ -86,6 +84,10 @@ textarea {
     color: #e5e5e5;
 }
 
+#content::before {
+    content: "I'm feeling: ";
+}
+
 button {
     margin-top: 50px;
     width: 100%;
@@ -114,14 +116,6 @@ button {
     content: "Date: ";
 }
 
-#temp::before {
-    content: "Temperature: ";
-}
-
-#content::before {
-    content: "I'm feeling: ";
-}
-
 input:focus,
 select:focus,
 textarea:focus,
@@ -129,14 +123,16 @@ button:focus {
     outline: none;
 }
 
+#temp::before {
+    content: "Temperature: ";
+}
+
 :-ms-input-placeholder {
-    /* Internet Explorer 10-11 */
     color: #f0d43a;
     font-family: 'Oswald', sans-serif;
 }
 
 ::-ms-input-placeholder {
-    /* Microsoft Edge */
     color: #f0d43a;
     font-family: 'Oswald', sans-serif;
 }
